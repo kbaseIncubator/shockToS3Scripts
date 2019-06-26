@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
 '''
-This script loads fake worksapce shock records into a DB to allow for manually testing the
+This script loads fake workspace shock records into a DB to allow for manually testing the
 print statements in workspaceShockToS3.py.
 '''
 
 ###### CONFIGURATION VARIABLES ######
 
 NUM_RECORDS_TO_LOAD = 1010
-CONFIG_MONGO_HOST = "localhost"
-CONFIG_MONGO_DATABASE = "workspace_conv_test_many_recs"
+CONFIG_MONGO_HOST = 'localhost'
+CONFIG_MONGO_DATABASE = 'workspace_conv_test_many_recs'
 
 #### END CONFIGURATION VARIABLES ####
 
@@ -17,11 +17,11 @@ import random
 import uuid
 from pymongo.mongo_client import MongoClient
 
-COLLECTION_SHOCK = "shock_nodeMap"
+COLLECTION_SHOCK = 'shock_nodeMap'
 
-KEY_SHOCK_CHKSUM = "chksum"
-KEY_SHOCK_NODE = "node"
-KEY_SHOCK_SORTED = "sorted"
+KEY_SHOCK_CHKSUM = 'chksum'
+KEY_SHOCK_NODE = 'node'
+KEY_SHOCK_SORTED = 'sorted'
 
 def main():
     client = MongoClient(CONFIG_MONGO_HOST)
@@ -35,5 +35,5 @@ def main():
              KEY_SHOCK_NODE: str(uuid.uuid4()),
              KEY_SHOCK_SORTED: True})
         
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
